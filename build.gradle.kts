@@ -1,6 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
+
     id("application")
     id("org.springframework.boot") version "2.5.5"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
@@ -8,12 +9,19 @@ plugins {
     kotlin("plugin.spring") version "1.5.31"
 }
 
+apply{
+    plugin("kotlin")
+    plugin("kotlin-spring")
+    plugin("java")
+    plugin("org.springframework.boot")
+}
+
 group = "heroku.test"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 application {
-    mainClass.set("ru.alfabank.api.ApiApplication")
+    mainClass.set("heroku.test.first.FirstApplication")
 }
 
 
